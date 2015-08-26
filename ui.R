@@ -1,11 +1,9 @@
 shinyUI(pageWithSidebar(
-  headerPanel('Iris k-means clustering'),
+  headerPanel('oncoprint example'),
   sidebarPanel(
-    selectInput('xcol', 'X Variable', names(iris)),
-    selectInput('ycol', 'Y Variable', names(iris),
-                selected=names(iris)[[2]]),
-    numericInput('clusters', 'Cluster count', 3,
-                 min = 1, max = 9)
+    textInput("samples", label = h3("Samples to include:"), value = "1:75"),
+    p(),
+    tags$small("R notation to select column (sample) indices, i.e. c(1:10,60:75)")
   ),
   mainPanel(
     plotOutput('plot1')
