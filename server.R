@@ -1,4 +1,7 @@
-library(devtools)
+if(!require(devtools)){
+  install.packages("devtools")
+  library(devtools)
+}
 if(!require(oncoprint)){
   install_github("dakl/oncoprint")
   library(oncoprint)
